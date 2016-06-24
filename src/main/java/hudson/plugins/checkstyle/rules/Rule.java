@@ -31,7 +31,10 @@ public class Rule {
      */
     public Rule(final String name) {
         this.name = name;
-        description = UNDEFINED_DESCRIPTION;
+
+        // Hack to show ESLint Rule URL for the Rule when the description is undefined
+        String eslintRuleUrl = "http://eslint.org/docs/rules/" + name;
+        description = "<a href=\"" + eslintRuleUrl + "\" target=\"_blank\">" + eslintRuleUrl + "</a>";
     }
 
     /**
